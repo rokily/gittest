@@ -49,9 +49,10 @@
 - git config --global alias.last 'log -1'         # 显示最后一次提交
 - git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-### 工作区和版本库(暂存区+分支)
+### 工作区和版本库(暂存区+仓库)
 
 ![工作区和暂存区](att/git-workspace-stagespace.jpeg)
+- 工作区(Working Directory), 暂存区(Index or Stage), 仓库(History或Repository)
 - 电脑里能看到的目录是工作区
 - 工作区的隐藏目录.git是版本库
 - Git版本库中有很多东西, 其中stage(或者叫index)是暂存区, 还有Git为我们自动创建的第一个分支master, 以及指向master的指针叫HEAD
