@@ -1,4 +1,4 @@
-### Git
+## Git
 - [Git官网](https://git-scm.com/)
 - [Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 [###Git 基础图解、分支图解、全面教程、常用命令###](http://www.cnblogs.com/cheneasternsun/p/5952830.html)
@@ -51,7 +51,7 @@
 
 ### 工作区和版本库(暂存区+分支)
 
-![工作区和暂存区](../att/git-workspace-stagespace.jpeg)
+![工作区和暂存区](att/git-workspace-stagespace.jpeg)
 - 电脑里能看到的目录是工作区
 - 工作区的隐藏目录.git是版本库
 - Git版本库中有很多东西, 其中stage(或者叫index)是暂存区, 还有Git为我们自动创建的第一个分支master, 以及指向master的指针叫HEAD
@@ -67,10 +67,10 @@
 ### 解决分支合并冲突
 - 创建新分支feature1, 并在该分支上提交了代码(git checkout -b feature1; git add readme.md; git commit -m "update line5";)
 - 然后切换回master分支, 并修改了同文件同行内容(git checkout master; git add readme.md; git commit -m "update line5 too";)
-- 现在master和feature分支都有了新提交, 效果是这样的: ![](../att/git-merge-conflict.png)
+- 现在master和feature分支都有了新提交, 效果是这样的: ![](att/git-merge-conflict.png)
 - 这时把feature分支merge到master是会有冲突的(git merge feature1 或者 git merge --no-ff -m "merge with no-ff" feature1), 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
 - 可以用"git status"查看到冲突文件, 打开文件后<<<<<<<, =======, >>>>>>>标记出不同分支的内容, 需手动修改该文件
-- 手动修改后, 重新提交(git add readme.md; git commit -m "conflict fixed";), 这时分支效果是这样的: ![](../att/git-merge-conflict-fixed.png)
+- 手动修改后, 重新提交(git add readme.md; git commit -m "conflict fixed";), 这时分支效果是这样的: ![](att/git-merge-conflict-fixed.png)
 - 使用git log --graph [--pretty=oneline --abbrev-commit] 可以看到合并情况
 - 最后, 删除无用的feature1(git branch -d feature1)
 
